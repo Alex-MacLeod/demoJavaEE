@@ -3,12 +3,11 @@
     var AddMovieController =  function(movieService) {
         var vm = this;
 
-        vm.movies = [];
-
         vm.add = function (movie) {
-            movieService.saveMovie(movie).then(function (movie) {
+            <!-- vm.movie = {title:vm.title,genre:vm.genre,ageRating:vm.rating };-->
+            movieService.saveMovie(movie).then(function (results) {
                 console.log("Movie " + movie.title + "added");
-                vm.movies.push(movie);
+                vm.movies = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;

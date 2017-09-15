@@ -1,22 +1,22 @@
 <div ng-controller="AddMovieController as addCtrl">
 
-    <form ng-submit="addCtrl.add(movie)" name="sentMessage" id="contactForm" method="post">
+    <form ng-submit="addCtrl.add(movie)" name="sentMessage" id="contactForm" method="post"> <!--ng-submit="ctrl.submit()"-->
         <div>
             <div>
                 <label>Title: </label>
-                <input type="text" ng-model="movie.title" required>
+                <input type="text" ng-model="movie.title" required>     <!--ng-model="ctrl.title"-->
             </div>
         </div>
         <div>
             <div>
                 <label>Genre: </label>
-                <input type="text" ng-model="movie.genre" required>
+                <input type="text" ng-model="movie.genre" required>     <!--ng-model="ctrl.genre"-->
             </div>
         </div>
         <div>
             <div>
                 <label>Age Rating:</label>
-                <select ng-model="movie.rating" required>
+                <select ng-model="movie.rating" required>               <!--ng-model="ctrl.rating"-->
                     <option value = "">Choose rating</option>
                     <option value = "U">U</option>
                     <option value = "PG">PG</option>
