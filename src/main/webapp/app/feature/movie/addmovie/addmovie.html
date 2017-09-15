@@ -1,0 +1,49 @@
+<div ng-controller="AddMovieController as addCtrl">
+
+    <form ng-submit="addCtrl.add(movie)" name="sentMessage" id="contactForm" method="post">
+        <div>
+            <div>
+                <label>Title: </label>
+                <input type="text" ng-model="movie.title" required>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Genre: </label>
+                <input type="text" ng-model="movie.genre" required>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Age Rating:</label>
+                <select ng-model="movie.rating" required>
+                    <option value = "">Choose rating</option>
+                    <option value = "U">U</option>
+                    <option value = "PG">PG</option>
+                    <option value = "12A">12A</option>
+                    <option value = "12">12</option>
+                    <option value = "15">15</option>
+                    <option value = "18">18</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">Add movie</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Age Rating</th>
+        </tr>
+        <tr ng-repeat="film in addCtrl.movies">
+            <td>{{film.title | uppercase}}</td>
+            <td>{{film.genre}}</td>
+            <td>{{film.rating}}</td>
+        </tr>
+    </table>
+
+    <div>
+        <span>Total films: {{addCtrl.movies.length}}</span>
+    </div>
+</div>

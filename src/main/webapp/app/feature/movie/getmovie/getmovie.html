@@ -1,0 +1,25 @@
+<div ng-controller="GetMovieController as getCtrl">
+    <div>
+        Get Movies: {{getCtrl.movies}}
+    </div>
+    <h2>Available Movies</h2>
+    <div class="form-group">
+        <label moviefilter="usr">Filter:</label>
+        <input type="text" ng-model="movieFilter.Title" class="form-control" id="bookfilter">
+    </div>
+    <br/><br/>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Age Rating</th>
+        </tr>
+        <tr ng-repeat="movie in getCtrl.movies | filter:movieFilter>
+            <td>{{movie.title | uppercase}}</td>
+            <td>{{movie.genre}}</td>
+            <td>{{movie.ageRating}}</td>
+        </tr>
+    </table>
+
+    <span>Total books: {{getCtrl.movies.length}}</span>
+</div>
